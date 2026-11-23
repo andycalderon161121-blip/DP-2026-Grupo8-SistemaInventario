@@ -1,0 +1,27 @@
+@startuml
+interface MovimientoStock
+abstract class MovimientoFactory
+class EntradaFactory
+class SalidaFactory
+class EntradaStock
+class SalidaStock
+class Inventario
+interface ObservadorInventario
+class PanelInventarioObserver
+class AlertaStockObserver
+class Producto
+class VentanaPrincipal
+
+MovimientoFactory <|-- EntradaFactory
+MovimientoFactory <|-- SalidaFactory
+MovimientoStock <|.. EntradaStock
+MovimientoStock <|.. SalidaStock
+EntradaFactory ..> EntradaStock : crea
+SalidaFactory ..> SalidaStock : crea
+Inventario o-- Producto
+Inventario --> MovimientoStock : ejecuta
+ObservadorInventario <|.. PanelInventarioObserver
+ObservadorInventario <|.. AlertaStockObserver
+Inventario --> ObservadorInventario : notifica
+VentanaPrincipal --> Inventario
+@enduml

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="DP-2026-Grupo8-SistemaInventario" default="default" basedir=".">
+    <description>Proyecto de Diseño de Patrones - Sistema de control de inventario</description>
+    <import file="nbproject/build-impl.xml"/>
+</project>
