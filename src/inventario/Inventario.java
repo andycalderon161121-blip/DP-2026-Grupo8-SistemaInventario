@@ -13,6 +13,7 @@ public class Inventario {
         productos.add(new Producto("P002", "Azúcar (kg)", 12, 4));
         productos.add(new Producto("P003", "Aceite (botella)", 8, 3));
         productos.add(new Producto("P004", "Leche (unidad)", 6, 3));
+        productos.add(new Producto("P005", "Fanta (lata)", 20, 4));
     }
 
     public void agregarObservador(ObservadorInventario observador) {
