@@ -22,6 +22,7 @@ public class VentanaPrincipal extends JFrame {
         setSize(850, 570);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
+        
 
         JLabel titulo = new JLabel("CONTROL DE INVENTARIO", SwingConstants.CENTER);
         titulo.setFont(new Font("Arial", Font.BOLD, 22));
@@ -32,6 +33,7 @@ public class VentanaPrincipal extends JFrame {
         };
         JTable tabla = new JTable(modelo);
         tabla.setRowHeight(25);
+        tabla.getTableHeader().setFont(new Font("Arial",Font.BOLD,12));
         cargarTabla();
 
         areaAlertas = new JTextArea(5, 25);
@@ -41,7 +43,6 @@ public class VentanaPrincipal extends JFrame {
         historial.setEditable(false);
         historial.setLineWrap(true);
 
-        // OBSERVER: la tabla y el módulo de alertas reciben automáticamente los cambios.
         inventario.agregarObservador(new PanelInventarioObserver(modelo));
         inventario.agregarObservador(new AlertaStockObserver(areaAlertas));
 
@@ -110,3 +111,4 @@ public class VentanaPrincipal extends JFrame {
         }
     }
 }
+
